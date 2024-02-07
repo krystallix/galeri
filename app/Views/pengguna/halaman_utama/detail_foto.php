@@ -53,8 +53,10 @@
                                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                                     <div class="profile-pengguna">
-                                        <img src="assets/img/gallery/gallery-2.jpg" alt="">
-                                        <span class="username-pengguna">username</span>
+                                        <a href="">
+                                            <img src="assets/img/gallery/gallery-2.jpg" alt="">
+                                            <span class="username-pengguna">username</span>
+                                        </a>
                                         <span class="float-end"><i class="bi bi-x-octagon h5"></i></span>
                                     </div>
                                     <div class="deskripsi">
@@ -88,12 +90,16 @@
                                     <div class="comment">
                                         <div class="comment-output">
                                             <div class="profile-commentator">
-                                                <img src="assets/img/gallery/gallery-4.jpg" alt="">
+                                                <a href="">
+                                                    <img src="assets/img/gallery/gallery-4.jpg" alt="">
+                                                </a>
                                             </div>
                                             <div class="detail-comment">
-                                                <div class="username-commentator">
-                                                    username
-                                                </div>
+                                                <a href="">
+                                                    <div class="username-commentator">
+                                                        username
+                                                    </div>
+                                                </a>
                                                 <div class="isi-comment">
                                                     This is a wider card with supporting text below as a natural lead-in to additional content.
                                                 </div>
@@ -101,12 +107,16 @@
                                         </div>
                                         <div class="comment-output">
                                             <div class="profile-commentator">
-                                                <img src="assets/img/gallery/gallery-4.jpg" alt="">
+                                                <a href="">
+                                                    <img src="assets/img/gallery/gallery-4.jpg" alt="">
+                                                </a>
                                             </div>
                                             <div class="detail-comment">
-                                                <div class="username-commentator">
-                                                    username
-                                                </div>
+                                                <a href="">
+                                                    <div class="username-commentator">
+                                                        username
+                                                    </div>
+                                                </a>
                                                 <div class="isi-comment">
                                                     This is a wider card.
                                                 </div>
@@ -114,12 +124,16 @@
                                         </div>
                                         <div class="comment-output">
                                             <div class="profile-commentator">
-                                                <img src="assets/img/gallery/gallery-4.jpg" alt="">
+                                                <a href="">
+                                                    <img src="assets/img/gallery/gallery-4.jpg" alt="">
+                                                </a>
                                             </div>
                                             <div class="detail-comment">
-                                                <div class="username-commentator">
-                                                    username
-                                                </div>
+                                                <a href="">
+                                                    <div class="username-commentator">
+                                                        username
+                                                    </div>
+                                                </a>
                                                 <div class="isi-comment">
                                                     This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
                                                 </div>
@@ -127,12 +141,16 @@
                                         </div>
                                         <div class="comment-output">
                                             <div class="profile-commentator">
-                                                <img src="assets/img/gallery/gallery-4.jpg" alt="">
+                                                <a href="">
+                                                    <img src="assets/img/gallery/gallery-4.jpg" alt="">
+                                                </a>
                                             </div>
                                             <div class="detail-comment">
-                                                <div class="username-commentator">
-                                                    username
-                                                </div>
+                                                <a href="">
+                                                    <div class="username-commentator">
+                                                        username
+                                                    </div>
+                                                </a>
                                                 <div class="isi-comment">
                                                     This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
                                                 </div>

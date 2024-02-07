@@ -52,8 +52,8 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a href="/" class="active">Home</a></li>
-                    <li><a href="/tambah">Create</a></li>
+                    <!-- <li><a href="/" class="active">Home</a></li> -->
+                    <li><a href="/tambah">Post</a></li>
                     <!-- <li><a href="about.html">About</a></li>
                     <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
@@ -87,13 +87,42 @@
                 </div> -->
             </nav><!-- .navbar -->
 
+            <!-- <div>
+                <form action="" method="post">
+                    <div class="input-group input-group-sm col-12" style="width: 290px;">
+                        <input type="text" name="keyword" class="search form-control" placeholder="Search">
+
+                        <div class="button-search input-group-append">
+                            <button type="submit" class="btn white">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div> -->
+
             <!-- <span class="divider"></span> -->
-            <div class="my-profile">
-                <img src="assets/img/gallery/gallery-5.jpg" alt="">
-                <ul class="profile-option">
-                    <li><a href="/my-profile"><i class="bi bi-person-circle"></i> Profile</a></li>
-                    <li><a href="#"><i class="bi bi-arrow-left-circle-fill"></i> Logout</a></li>
-                </ul>
+            <div class="my-profile d-flex">
+                <div class="search">
+                    <form action="" method="post">
+                        <div class="input-group input-group-sm col-12">
+                            <input type="text" name="keyword" class="input-search form-control" placeholder="Search">
+
+                            <div class="button-search input-group-append">
+                                <button type="submit" class="btn white">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <img src="assets/img/gallery/gallery-5.jpg" alt="">
+                    <ul class="profile-option">
+                        <li><a href="/my-profile"><i class="bi bi-person-circle"></i> Profile</a></li>
+                        <li onclick="return confirm('Apakah yakin logout?');"><a href="#"><i class="bi bi-arrow-left-circle-fill"></i> Logout</a></li>
+                    </ul>
+                </div>
             </div>
 
             <!-- <div class="header-social-links">
@@ -101,9 +130,9 @@
                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
                 <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
                 <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-            </div>
+            </div> -->
             <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i> -->
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
         </div>
     </header><!-- End Header -->

@@ -40,4 +40,11 @@ class Pengguna extends BaseController
         echo view('pengguna/profile/edit_foto');
         echo view('layout/footer');
     }
+
+    public function editProfile()
+    {
+        echo view('layout/header');
+        echo view('pengguna/profile/edit_profile');
+        echo view('layout/footer');
+    }
 }

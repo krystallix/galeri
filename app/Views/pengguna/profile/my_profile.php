@@ -7,7 +7,7 @@
                 <h2>Ini Nama Lengkap</h2>
                 <p class="username">ini username</p>
                 <p class="deskripsi-profile">ini deskripsi profile</p>
-                <a href="contact.html" class="btn-get-started">Edit Profile</a>
+                <a href="/edit-profile" class="btn-get-started">Edit Profile</a>
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
 <main id="main" data-aos="fade" data-aos-delay="1500">
 
     <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery">
+    <section id="gallery" class="gallery-myprofile">
         <div class="container-fluid">
 
             <div class="induk row gy-4">

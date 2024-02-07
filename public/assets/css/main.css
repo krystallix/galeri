@@ -352,6 +352,17 @@ h6 {
 @media (min-width: 1280px) {
   .navbar {
     padding: 0;
+    background-color: #3b3b3b;
+    margin-right: 1100px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #5e5e5e;
+  }
+
+  .navbar:hover {
+    background-color: #242424;
+    box-shadow: 1px 1px 12px #D0E4FF;
   }
 
   .navbar ul {
@@ -371,13 +382,14 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0 10px 30px;
+    padding: 6px 6px 6px 6px;
     font-family: var(--font-primary);
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 13px;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    font-weight: 600;
+    /* color: rgba(255, 255, 255, 0.5); */
+    color: white;
     white-space: nowrap;
     transition: 0.3s;
   }
@@ -709,12 +721,12 @@ h6 {
 # Pricing Section
 --------------------------------------------------------------*/
 .gallery {
-  margin-top: 20px;
+  margin-top: 105px;
   margin-bottom: 50px;
 }
 
 .gallery .induk {
-  /* background-color: #999; */
+  background-color: #999;
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -787,6 +799,82 @@ h6 {
 /*--------------------------------------------------------------
 # TAMBAHAN MY-PROFILE
 --------------------------------------------------------------*/
+.gallery-myprofile {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.gallery-myprofile .induk {
+  /* background-color: #999; */
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+  position: relative;
+}
+
+.gallery-myprofile .gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #27a776;
+  height: fit-content;
+}
+
+.gallery-myprofile .gallery-item img {
+  transition: 0.3s;
+}
+
+.gallery-myprofile .gallery-links {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 3;
+}
+
+.gallery-myprofile .gallery-links .preview-link,
+.gallery-myprofile .gallery-links .details-link {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: 0.3s;
+  line-height: 1.2;
+  margin: 30px 8px 0 8px;
+}
+
+.gallery-myprofile .gallery-links .preview-link:hover,
+.gallery-myprofile .gallery-links .details-link:hover {
+  color: #fff;
+}
+
+.gallery-myprofile .gallery-links .details-link {
+  font-size: 30px;
+  line-height: 0;
+}
+
+.gallery-myprofile .gallery-item:hover .gallery-links {
+  opacity: 1;
+}
+
+.gallery-myprofile .gallery-item:hover .preview-link,
+.gallery-myprofile .gallery-item:hover .details-link {
+  margin-top: 0;
+}
+
+.gallery-myprofile .gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.glightbox-clean .gslide-description {
+  background: #222425;
+}
+
+.glightbox-clean .gslide-title {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
 .garis {
   /* 3F3F3F */
   border-top: 5px dashed #3F3F3F;
@@ -798,7 +886,7 @@ h6 {
   margin-top: 40px;
 }
 
-.gallery .gallery-links button {
+.gallery-myprofile .gallery-links button {
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -1363,13 +1451,13 @@ h6 {
   margin-right: -12px; */
 }
 
+
+/*--------------------------------------------------------------
+# PROFILE PENGGUNA
+--------------------------------------------------------------*/
 /*PROFILE PENGGUNA*/
 .card-body .profile-pengguna {
   position: relative;
-}
-
-.card-body .profile-pengguna .username-pengguna {
-  margin-left: 5px;
 }
 
 .card-body .profile-pengguna img {
@@ -1379,7 +1467,26 @@ h6 {
   object-fit: cover;
 }
 
+.card-body .profile-pengguna img:hover {
+  /* filter: saturate(70%); */
+  filter: brightness(90%);
+}
 
+.card-body .profile-pengguna .username-pengguna {
+  margin-left: 5px;
+  color: black;
+}
+
+.card-body .profile-pengguna .username-pengguna:hover {
+  color: #3d3d3d;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# DESKRIPSI FOTO
+--------------------------------------------------------------*/
 /*DESKRIPSI FOTO*/
 .card-body .deskripsi {
   /* background-color: #27a776; */
@@ -1398,6 +1505,9 @@ h6 {
 }
 
 
+/*--------------------------------------------------------------
+# LIKE DAN SHARE
+--------------------------------------------------------------*/
 /*LIKE-SHARE*/
 .card-body .aksi {
   margin-top: -5px;
@@ -1431,6 +1541,9 @@ h6 {
 }
 
 
+/*--------------------------------------------------------------
+# COMMENT OUTPUT
+--------------------------------------------------------------*/
 /*COMMENT-OUTPUT*/
 .card-body .comment {
   max-height: 290px;
@@ -1452,6 +1565,10 @@ h6 {
   object-fit: cover;
 }
 
+.card-body .comment .comment-output .profile-commentator img:hover {
+  filter: brightness(90%);
+}
+
 .card-body .comment .comment-output .detail-comment {
   margin-left: 40px;
   margin-top: -30px;
@@ -1465,6 +1582,12 @@ h6 {
 .card-body .comment .comment-output .detail-comment .username-commentator {
   font-weight: bold;
   font-size: small;
+  color: black;
+}
+
+.card-body .comment .comment-output .detail-comment .username-commentator:hover{
+  /* color: #3d3d3d; */
+  text-decoration: underline;
 }
 
 .card-body .comment .comment-output .detail-comment .isi-comment {
@@ -1656,6 +1779,9 @@ margin-left: 50px;
 } */
 
 
+/*--------------------------------------------------------------
+# INPUT COMMENT
+--------------------------------------------------------------*/
 /*INPUT-COMMENT*/
 /* .card-body .input-comment {
   background-color: #1775F1;
@@ -1759,8 +1885,16 @@ margin-left: 50px;
 } */
 
 .header .my-profile {
-  position: relative;
+  /* position: relative; */
   padding-right: 15px;
+  gap: 30px;
+}
+
+@media (max-width: 575px) {
+  .header .my-profile {
+    padding-left: 5px;
+    gap: 10px;
+  }
 }
 
 .header .my-profile img {
@@ -1769,6 +1903,8 @@ margin-left: 50px;
   border-radius: 50%;
   object-fit: cover;
   cursor: pointer;
+  display: inline-block;
+  line-height: 0px;
 }
 
 .header .my-profile img:hover {
@@ -1811,4 +1947,139 @@ margin-left: 50px;
   background-color: #F1F0F6;
 }
 
+/*--------------------------------------------------------------
+# EDIT PROFILE
+--------------------------------------------------------------*/
+.profile .card-header {
+  font-weight: 600;
+  font-size: medium;
+}
 
+.profile .card-body .foto-profile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile .card-body .foto-profile .ganti-foto {
+  height: 40px;
+  width: 100px;
+  text-align: center;
+  background-color: #dbdbdb;
+  border-radius: 15px;
+  margin-left: 15px;
+}
+
+.profile .card-body .foto-profile .ganti-foto .ganti {
+  line-height: 40px;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.profile .card-body .foto-profile .ganti-foto:hover {
+  background-color: #c7c7c7;
+  cursor: pointer;
+}
+
+.profile .card-body .input-profile {
+  margin-top: 20px;
+}
+
+.profile .card-body .input-profile label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.profile .card-body .input-profile input {
+  border-radius: 10px;
+  height: 50px;
+}
+
+.profile .card-body .input-profile textarea {
+  border-radius: 10px;
+}
+
+.profile .card-body .input-profile input:focus,
+.profile .card-body .input-profile textarea:focus {
+  box-shadow: 0 0 0 1px #1775F1, 0 0 0 4px #D0E4FF;
+}
+
+.profile .card-body .input-profile .input-password {
+  width: 100%;
+  display: flex;
+}
+
+.profile .card-body .input-profile .input-password i {
+  /* background-color: #27a776; */
+  position: absolute;
+  margin-top: 13px;
+  margin-left: -50px;
+  padding: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: all .3s ease;
+}
+
+
+/*--------------------------------------------------------------
+# SEARCH
+--------------------------------------------------------------*/
+.header .search .input-group {
+  width: 400px;
+}
+
+@media (max-width: 575px) {
+  .header .search .input-group {
+    width: 200px;
+    margin-left: 10px;
+  }
+}
+
+.header .input-search {
+  background-color: transparent;
+  color: white;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.header .input-search::placeholder {
+  color: white;
+}
+
+/* .header .button-search {
+  background-color: transparent;
+  border-radius: 5px;
+  border: #2cbc85;
+} */
+
+.header .button-search .btn {
+/* border: 1px solid black; */
+	background-color: transparent;
+	color: black;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 0;
+/* padding: 16px ; */
+/* font-size: 20px; */
+/* cursor: pointer; */
+}
+
+.header .button-search .white {
+  border-color: white;
+	color: white;
+}
+
+.header .button-search .btn:hover,
+.header .button-search .white:hover {
+  background-color: #3b3b3b;
+  -webkit-text-stroke: 1px;
+}
+
+/* .header .button-search:hover {
+  background-color: #525252;
+  border: 1px white;
+  -webkit-text-stroke: 1px;
+} */

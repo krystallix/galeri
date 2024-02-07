@@ -26,7 +26,7 @@
                                             <div class="foto form-group">
                                                 <label>Foto</label>
                                                 <div>
-                                                    <input type="file" class="form-control" id="foto" name="foto" onchange="previewImg()">
+                                                    <input type="file" class="form-control" id="foto" name="foto" onchange="previewImg()" accept="image/*">
                                                 </div>
                                             </div>
                                             <div class="judul form-group">

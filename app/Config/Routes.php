@@ -11,3 +11,4 @@ $routes->get('/detail', 'Pengguna\Pengguna::detailFoto');
 $routes->get('/tambah', 'Pengguna\Pengguna::tambahFoto');
 $routes->get('/my-profile', 'Pengguna\Pengguna::myProfile');
 $routes->get('/edit', 'Pengguna\Pengguna::edit');
+$routes->get('/edit-profile', 'Pengguna\Pengguna::editProfile');
