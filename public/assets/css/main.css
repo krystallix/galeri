@@ -153,7 +153,7 @@ h6 {
   height: 44px;
   border-radius: 50px;
   transition: all 0.4s;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 
 .scroll-top i {
