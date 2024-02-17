@@ -1,3 +1,7 @@
+<?= $this->extend('layout/pengguna/header'); ?>
+
+<?= $this->section('content_pengguna'); ?>
+
 <main id="main" data-aos="fade" data-aos-delay="1500">
 
     <!-- ======= Gallery Section ======= -->
@@ -59,3 +63,5 @@
     </section><!-- End Gallery Section -->
 
 </main><!-- End #main -->
+
+<?= $this->endSection(); ?>

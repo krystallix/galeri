@@ -8,50 +8,64 @@ class Pengguna extends BaseController
 {
     public function index()
     {
-        echo view('layout/pengguna/header');
-        echo view('pengguna/halaman_utama/pengguna');
-        echo view('layout/pengguna/footer');
+        $data = [
+            'title'     => 'GaleriFoto | Home'
+        ];
+
+        return view('pengguna/halaman_utama/pengguna', $data);
     }
 
     public function detailFoto()
     {
-        echo view('layout/pengguna/header');
-        echo view('pengguna/halaman_utama/detail_foto');
-        echo view('layout/pengguna/footer');
+        $data = [
+            'title'     => 'GaleriFoto | Detail'
+        ];
+
+        return view('pengguna/halaman_utama/detail_foto', $data);
     }
 
     public function tambahFoto()
     {
-        echo view('layout/pengguna/header');
-        echo view('pengguna/halaman_utama/tambah_foto');
-        echo view('layout/pengguna/footer');
+        $data = [
+            'title'     => 'GaleriFoto | Post Foto'
+        ];
+
+        return view('pengguna/halaman_utama/tambah_foto', $data);
     }
 
     public function myProfile()
     {
-        echo view('layout/pengguna/header');
-        echo view('pengguna/profile/my_profile');
-        echo view('layout/pengguna/footer');
+        $data = [
+            'title'     => 'GaleriFoto | My Profile'
+        ];
+
+        return view('pengguna/profile/my_profile', $data);
     }
 
     public function edit()
     {
-        echo view('layout/pengguna/header');
-        echo view('pengguna/profile/edit_foto');
-        echo view('layout/pengguna/footer');
+        $data = [
+            'title'     => 'GaleriFoto | Edit Foto'
+        ];
+
+        return view('pengguna/profile/edit_foto', $data);
     }
 
     public function editProfile()
     {
-        echo view('layout/pengguna/header');
-        echo view('pengguna/profile/edit_profile');
-        echo view('layout/pengguna/footer');
+        $data = [
+            'title'     => 'GaleriFoto | Edit Profile'
+        ];
+
+        return view('pengguna/profile/edit_profile', $data);
     }
 
     public function userProfile()
     {
-        echo view('layout/pengguna/header');
-        echo view('pengguna/halaman_utama/profile_user');
-        echo view('layout/pengguna/footer');
+        $data = [
+            'title'     => 'GaleriFoto | User'
+        ];
+
+        return view('pengguna/halaman_utama/profile_user', $data);
     }
 }

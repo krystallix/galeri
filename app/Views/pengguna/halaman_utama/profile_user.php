@@ -1,3 +1,7 @@
+<?= $this->extend('layout/pengguna/header'); ?>
+
+<?= $this->section('content_pengguna'); ?>
+
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade" data-aos-delay="1500">
     <div class="container">
@@ -91,3 +95,5 @@
     </section><!-- End Gallery Section -->
 
 </main><!-- End #main -->
+
+<?= $this->endSection(); ?>
