@@ -53,7 +53,7 @@
                                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                                     <div class="profile-pengguna">
-                                        <a href="">
+                                        <a href="/profile-user">
                                             <img src="assets/img/gallery/gallery-2.jpg" alt="">
                                             <span class="username-pengguna">username</span>
                                         </a>
@@ -90,12 +90,12 @@
                                     <div class="comment">
                                         <div class="comment-output">
                                             <div class="profile-commentator">
-                                                <a href="">
+                                                <a href="/profile-user">
                                                     <img src="assets/img/gallery/gallery-4.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="detail-comment">
-                                                <a href="">
+                                                <a href="/profile-user">
                                                     <div class="username-commentator">
                                                         username
                                                     </div>
@@ -107,12 +107,12 @@
                                         </div>
                                         <div class="comment-output">
                                             <div class="profile-commentator">
-                                                <a href="">
+                                                <a href="/profile-user">
                                                     <img src="assets/img/gallery/gallery-4.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="detail-comment">
-                                                <a href="">
+                                                <a href="/profile-user">
                                                     <div class="username-commentator">
                                                         username
                                                     </div>
@@ -124,12 +124,12 @@
                                         </div>
                                         <div class="comment-output">
                                             <div class="profile-commentator">
-                                                <a href="">
+                                                <a href="/profile-user">
                                                     <img src="assets/img/gallery/gallery-4.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="detail-comment">
-                                                <a href="">
+                                                <a href="/profile-user">
                                                     <div class="username-commentator">
                                                         username
                                                     </div>
@@ -141,12 +141,12 @@
                                         </div>
                                         <div class="comment-output">
                                             <div class="profile-commentator">
-                                                <a href="">
+                                                <a href="/profile-user">
                                                     <img src="assets/img/gallery/gallery-4.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="detail-comment">
-                                                <a href="">
+                                                <a href="/profile-user">
                                                     <div class="username-commentator">
                                                         username
                                                     </div>

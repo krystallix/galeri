@@ -8,6 +8,9 @@
                     <div class="tambah card">
                         <div class="card-header">
                             Form Tambah Foto
+                            <div class="float-end">
+                                <a href="/" class="btn btn-warning btn-sm"><i class="bi bi-arrow-left-short"></i> Back</a>
+                            </div>
                         </div>
                         <form action="" method="post">
                             <?= csrf_field(); ?>

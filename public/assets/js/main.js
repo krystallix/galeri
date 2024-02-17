@@ -188,9 +188,9 @@ function previewImg() {
 }
 
 /*--------------------------------------------------------------
-# PROFILE NAVBAR
+# PROFILE ADMIN
 --------------------------------------------------------------*/
-const profile = document.querySelector('.header .my-profile');
+const profile = document.querySelector('.main-header .navbar-nav .nav-item .my-profile');
 const imgProfile = profile.querySelector('img');
 const dropdownProfile = profile.querySelector('.profile-option');
 

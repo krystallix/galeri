@@ -16,14 +16,6 @@
 
 <div class="garis"></div>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-lg-6 text-center">
-            <h6 class="dibuat">Dibuat</h6>
-        </div>
-    </div>
-</div>
-
 <main id="main" data-aos="fade" data-aos-delay="1500">
 
     <!-- ======= Gallery Section ======= -->
@@ -35,12 +27,12 @@
                     <div class="gallery-item h-100">
                         <img src="assets/img/gallery/2.jpg" class="img-fluid" alt="">
                         <div class="gallery-links d-flex align-items-center justify-content-center">
+                            <a href="/detail" title="Detail" class="preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
                             <form action="" method="post">
                                 <?= csrf_field(); ?>
                                 <input type="hidden" name="_method" value="DELETE">
-                                <button type="submit" class="glightbox preview-link" title="Hapus" onclick="return confirm('Apakah Anda yakin hapus?');"><i class="bi bi-trash3-fill h3"></i></button>
+                                <button type="submit" class="preview-link" title="Hapus" onclick="return confirm('Apakah Anda yakin hapus?');"><i class="bi bi-trash3-fill h3"></i></button>
                             </form>
-                            <a href="assets/img/gallery/gallery-1.jpg" title="Hapus" class="glightbox preview-link"><i class="bi bi-trash3-fill h3"></i></a>
                             <a href="/edit" title="Edit" class="details-link"><i class="bi bi-pencil-fill"></i></a>
                         </div>
                     </div>

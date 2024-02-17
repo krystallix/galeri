@@ -880,11 +880,12 @@ h6 {
   border-top: 5px dashed #3F3F3F;
   margin-right: 14px;
   margin-left: 14px;
+  margin-bottom: 5px;
 }
 
-.dibuat {
+/* .dipost {
   margin-top: 40px;
-}
+} */
 
 .gallery-myprofile .gallery-links button {
   background-color: transparent;
@@ -1307,8 +1308,8 @@ h6 {
 }
 
 .hero img {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
 }
