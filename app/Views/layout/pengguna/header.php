@@ -118,10 +118,15 @@
                     </form>
                 </div>
                 <div>
-                    <img src="assets/img/gallery/gallery-5.jpg" alt="">
+
+                    <?php
+                    $profileUser = userProfileLogin()->photo_profile;
+                    ?>
+
+                    <img src="assets/img/profile/<?= $profileUser; ?>" alt="">
                     <ul class="profile-option">
                         <li><a href="/my-profile"><i class="bi bi-person-circle"></i> Profile</a></li>
-                        <li onclick="return confirm('Apakah yakin logout?');"><a href="#"><i class="bi bi-arrow-left-circle-fill"></i> Logout</a></li>
+                        <li onclick="return confirm('Apakah yakin logout?');"><a href="/logout"><i class="bi bi-arrow-left-circle-fill"></i> Logout</a></li>
                     </ul>
                 </div>
             </div>

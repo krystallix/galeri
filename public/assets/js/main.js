@@ -190,7 +190,25 @@ function previewImg() {
 /*--------------------------------------------------------------
 # PROFILE ADMIN
 --------------------------------------------------------------*/
-const profile = document.querySelector('.main-header .navbar-nav .nav-item .my-profile');
+// const profile = document.querySelector('.main-header .navbar-nav .nav-item .my-profile');
+// const imgProfile = profile.querySelector('img');
+// const dropdownProfile = profile.querySelector('.profile-option');
+
+// imgProfile.addEventListener('click', function () {
+//     dropdownProfile.classList.toggle('show');
+// })
+
+// window.addEventListener('click', function (e) {
+//   if(e.target !== imgProfile) {
+//       if(e.target !== dropdownProfile) {
+//           if(dropdownProfile.classList.contains('show')) {
+//               dropdownProfile.classList.remove('show');
+//           }
+//       }
+//   }
+// })
+
+const profile = document.querySelector('.header .my-profile');
 const imgProfile = profile.querySelector('img');
 const dropdownProfile = profile.querySelector('.profile-option');
 

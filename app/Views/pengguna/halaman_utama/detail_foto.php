@@ -39,6 +39,12 @@
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-md-6">
+                    <?php if (session()->getFlashdata('pesan_insert')) : ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong><?= session()->getFlashdata('pesan_insert'); ?></strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    <?php endif; ?>
                     <div class="card mb-3">
                         <div class="row no-gutters">
                             <div class="col-md-6">

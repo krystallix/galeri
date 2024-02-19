@@ -9,6 +9,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Pengguna\Pengguna::index');
 $routes->get('/detail', 'Pengguna\Pengguna::detailFoto');
 $routes->get('/tambah', 'Pengguna\Pengguna::tambahFoto');
+$routes->post('/postFoto', 'Pengguna\Pengguna::postFoto');
 $routes->get('/my-profile', 'Pengguna\Pengguna::myProfile');
 $routes->get('/edit', 'Pengguna\Pengguna::edit');
 $routes->get('/edit-profile', 'Pengguna\Pengguna::editProfile');
@@ -28,3 +29,10 @@ $routes->get('/admin/editPengguna', 'Admin\DataPengguna::editPengguna');
 $routes->get('/admin/profile', 'Admin\ProfileAdmin::index');
 $routes->get('/admin/editProfile', 'Admin\ProfileAdmin::editProfile');
 $routes->get('/admin/edit', 'Admin\ProfileAdmin::edit');
+
+$routes->get('/login', 'Auth::login');
+$routes->post('/loginProses', 'Auth::loginProses');
+$routes->get('/registrasi', 'Auth::registrasi');
+$routes->post('/registrasiProses', 'Auth::registrasiProses');
+
+$routes->get('/logout', 'Auth::logout');
