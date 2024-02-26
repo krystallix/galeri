@@ -40,48 +40,50 @@
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="" class="table table-bordered table-hover">
-
-                                <tr>
-                                    <th width="40%">User ID</th>
-                                    <td>0001</td>
-                                </tr>
-                                <tr>
-                                    <th>Foto Profile</th>
-                                    <td class="profile-detail-pengguna"><img src="<?php echo base_url('assets') ?>/img/gallery/gallery-4.jpg" alt=""></td>
-                                </tr>
-                                <tr>
-                                    <th>Username</th>
-                                    <td>nanda</td>
-                                </tr>
-                                <tr>
-                                    <th>Nama Lengkap</th>
-                                    <td>Dian Nanda</td>
-                                </tr>
-                                <tr>
-                                    <th>Deskripsi Profile</th>
-                                    <td>ini deskripsi profile</td>
-                                </tr>
-                                <tr>
-                                    <th>Email</th>
-                                    <td>dian@gmail.com</td>
-                                </tr>
-                                <tr>
-                                    <th>Password</th>
-                                    <td>diannanda1</td>
-                                </tr>
-                                <tr>
-                                    <th>Jumlah Post</th>
-                                    <td>3</td>
-                                </tr>
-                                <tr>
-                                    <th>Jumlah Komentar</th>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <th>Jumlah Like</th>
-                                    <td>15</td>
-                                </tr>
-
+                                <?php foreach ($pengguna as $p) { ?>
+                                    <tr>
+                                        <th width="40%">User ID</th>
+                                        <td><?= $p->user_id; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Foto Profile</th>
+                                        <td class="profile-detail-pengguna"><img src="<?php echo base_url('assets') ?>/img/profile/<?= $p->photo_profile; ?>" alt=""></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Username</th>
+                                        <td><?= $p->username; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Nama Lengkap</th>
+                                        <td><?= $p->nama_lengkap; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Deskripsi Profile</th>
+                                        <td><?= $p->describe_profile; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Email</th>
+                                        <td><?= $p->email; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Jumlah Post</th>
+                                        <?php foreach ($jumlahPost as $jp) { ?>
+                                            <td><?= $jp; ?></td>
+                                        <?php } ?>
+                                    </tr>
+                                    <tr>
+                                        <th>Jumlah Komentar</th>
+                                        <?php foreach ($jumlahComment as $jc) { ?>
+                                            <td><?= $jc; ?></td>
+                                        <?php } ?>
+                                    </tr>
+                                    <tr>
+                                        <th>Jumlah Like</th>
+                                        <?php foreach ($jumlahLike as $jl) { ?>
+                                            <td><?= $jl; ?></td>
+                                        <?php } ?>
+                                    </tr>
+                                <?php } ?>
                             </table>
                         </div>
                         <!-- /.card-body -->

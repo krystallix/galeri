@@ -39,28 +39,23 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="" method="post">
+                        <form action="/admin/savePengguna" method="post" enctype="multipart/form-data">
                             <?= csrf_field(); ?>
                             <div class="card-body">
-                                <div class="input-pengguna form-group">
+                                <!-- <div class="input-pengguna form-group">
                                     <label>User ID</label>
-                                    <input type="text" class="form-control <?= (session('validation') && session('validation')->hasError('user_id')) ? 'is-invalid' : ''; ?>" id="userId" name="user_id" placeholder="Masukkan User ID pengguna" autofocus value="<?= old('user_id'); ?>">
-                                    <?php if (session('validation') && session('validation')->hasError('user_id')) : ?>
-                                        <div id="userId" class="invalid-feedback">
-                                            <?= session('validation')->getError('user_id'); ?>
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
+                                    <input type="text" class="form-control" id="userId" name="user_id" placeholder="Masukkan User ID pengguna" autofocus value="">
+                                </div> -->
                                 <div class="input-pengguna add-profile-pengguna form-group">
                                     <div>
                                         <label>Foto Profile</label>
                                     </div>
-                                    <img src="<?php echo base_url('assets') ?>/img/gallery/2.jpg" class="img-preview card-img" alt="gambar" height="100%">
+                                    <img src="<?php echo base_url('assets') ?>/img/defaultProfile.jpg" class="img-preview card-img" alt="gambar" height="100%">
                                     <label for="foto">
                                         <div class="ganti-foto">
-                                            <span aria-hidden="true" class="ganti">Ganti Foto Profile</span>
+                                            <span aria-hidden="true" class="ganti">Pilih Foto Profile</span>
                                         </div>
-                                        <input type="file" id="foto" style="display:none" onchange="previewImg()" accept="image/*">
+                                        <input type="file" id="foto" name="foto" style="display:none" onchange="previewImg()" accept="image/*">
                                     </label>
                                 </div>
                                 <div class="input-pengguna form-group">
@@ -83,8 +78,7 @@
                                 </div>
                                 <div class="input-pengguna form-group">
                                     <label>Deskripsi Profile</label>
-                                    <textarea class="form-control <?= (session('validation') && session('validation')->hasError('desc_profile')) ? 'is-invalid' : ''; ?>" id="desc_profile" name="desc_profile" placeholder="Masukkan deskripsi profile pengguna" value="<?= old('desc_profile'); ?>" cols="30" rows="3"></textarea>
-                                    <!-- <input type="text" class="form-control <?= (session('validation') && session('validation')->hasError('desc_profile')) ? 'is-invalid' : ''; ?>" id="desc_profile" name="desc_profile" placeholder="Masukkan deskripsi profile pengguna" value="<?= old('desc_profile'); ?>"> -->
+                                    <textarea class="form-control <?= (session('validation') && session('validation')->hasError('desc_profile')) ? 'is-invalid' : ''; ?>" id="desc_profile" name="desc_profile" placeholder="Masukkan deskripsi profile pengguna" cols="30" rows="3"><?= htmlspecialchars(old('desc_profile')); ?></textarea>
                                     <?php if (session('validation') && session('validation')->hasError('desc_profile')) : ?>
                                         <div id="desc_profile" class="invalid-feedback">
                                             <?= session('validation')->getError('desc_profile'); ?>
@@ -113,6 +107,9 @@
                                             </div>
                                         <?php endif; ?>
                                     </div>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="hidden" class="form-control" name="level" value="pengguna">
                                 </div>
                             </div>
                             <!-- /.card-body -->

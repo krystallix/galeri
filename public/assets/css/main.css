@@ -22,6 +22,7 @@
   --color-default: #fafafa;
   --color-primary: #27a776;
   --color-secondary: #161718;
+  --size-2: 1rem;
 }
 
 /* Smooth scroll behavior */
@@ -94,6 +95,28 @@ h6 {
   color: #fff;
 }
 
+
+/* Tambahkan animasi CSS untuk class 'heart-fill-animation' */
+@keyframes heartFill {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.2);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+/* Tambahkan class 'heart-fill-animation' pada perubahan ke 'bi-heart-fill' */
+#icon-like-status.bi-heart-fill.loved {
+  animation: heartFill 0.5s ease;
+}
+
+.loved{
+  color: red;
+}
 /*--------------------------------------------------------------
 # Page Header
 --------------------------------------------------------------*/
@@ -725,6 +748,37 @@ h6 {
   margin-bottom: 50px;
 }
 
+
+/* CSS biar responsive jika ukuran gambar berbeda beda */
+
+
+.galeri-main{
+  display: flex;
+  gap: var(--size-2);
+  justify-content: center;
+  padding: var(--size-2);
+  padding-bottom: 10em;
+}
+.galeri-col {
+  flex: calc(25% - var(--size-2));
+  max-width: calc(25% - var(--size-2));
+}
+
+
+@media screen and (max-width: 48em) {
+  .galeri-colcol {
+    flex: calc(50% - var(--size-2));
+    max-width: calc(50% - var(--size-2));
+  }
+}
+@media screen and (max-width: 36em) {
+  .galeri-col {
+    flex: calc(100% - var(--size-2));
+    max-width: calc(100% - var(--size-2));
+  }
+}
+
+
 .gallery .induk {
   background-color: #999;
   display: flex;
@@ -735,6 +789,7 @@ h6 {
 }
 
 .gallery .gallery-item {
+  margin-bottom: var(--size-2);
   position: relative;
   overflow: hidden;
   border-radius: 10px;
@@ -1419,12 +1474,11 @@ h6 {
 --------------------------------------------------------------*/
 
 /*CARD*/
-/* .card {
+.card-detail {
   max-width: 1000px;
-  max-height: 1000px;
-} */
+}
 
-.card .container {
+.card-detail .container {
   height: 100%;
   /* background-color: #27a776; */
   display: flex;
@@ -1432,22 +1486,26 @@ h6 {
   align-items: center;
 }
 
-.card .blur {
+.card-detail .blur {
   /* background-color: #1775F1; */
   height: 100%;
   /* width: 455px; */
   filter: blur(15px);
   position: absolute;
+  align-items: center;
+  /* margin-top: 60px; */
 }
 
-.card .blur img {
+.card-detail .blur img {
   filter: contrast(120%);
   filter: brightness(130%);
   filter: saturate(90%);
 }
 
-.card .container .foto {
+.card-detail .container .foto {
   position: absolute;
+  align-items: center;
+  /* margin-top: 60px; */
   /* margin-left: -12px;
   margin-right: -12px; */
 }
@@ -1498,6 +1556,7 @@ h6 {
 
 .card-body .deskripsi .judul-foto {
   font-weight: bold;
+  padding-bottom: 1rem;
 }
 
 .card-body .deskripsi .deskripsi-foto {
@@ -1511,12 +1570,19 @@ h6 {
 --------------------------------------------------------------*/
 /*LIKE-SHARE*/
 .card-body .aksi {
-  margin-top: -5px;
-  margin-bottom: -5px;
+  margin-top: -8px;
+  margin-bottom: -8px;
 }
 
 .card-body .aksi .like {
   display: inline-block;
+}
+
+.card-body .aksi .like .btn-like {
+  background-color: transparent;
+  border-color: transparent;
+  border-width: 2px;
+  border-radius: 2px;
 }
 
 .card-body .aksi .like .icon-like {
@@ -1524,21 +1590,59 @@ h6 {
   -webkit-text-stroke: 1px
 }
 
+.card-body .aksi .like .btn-like:hover,
+.card-body .aksi .like .icon-like:hover {
+  color: red;
+}
+
 .card-body .aksi .like .jumlah-like {
   display: inline-block;
-  margin-left: 3px;
+  /* margin-left: 3px; */
 }
 
 .card-body .aksi .share {
   float: inline-end;
+  height: 30px;
+  /* margin-top: -2px; */
 }
+
+.card-body .aksi .share .btn-share {
+  background-color: transparent;
+  border-color: transparent;
+  border-width: 2px;
+  border-radius: 2px;
+}
+
 .card-body .aksi .share .icon-share {
   display: inline-block;
 }
 
+
+
+
+.card-body .aksi .share .btn-share:hover,
+.card-body .aksi .share .icon-share:hover {
+  color: #1775F1;
+}
+
 .card-body .aksi .share .text-share {
   display: inline-block;
-  margin-left: 3px;
+  /* margin-left: -4px; */
+}
+
+.card-body .aksi .copied {
+  position: absolute;
+  display: none;
+  margin-left: 310px;
+  margin-top: 3px;
+  background-color: #474747;
+  color: white;
+  font-size: small;
+  height: 30px;
+  width: 100px;
+  border-radius: 3px;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -1547,7 +1651,8 @@ h6 {
 --------------------------------------------------------------*/
 /*COMMENT-OUTPUT*/
 .card-body .comment {
-  max-height: 290px;
+  height: 350px;
+  /* max-height: 290px; */
   overflow-y: auto;
   /* background-color: #27a776; */
   /* width: 100%;
@@ -1575,7 +1680,7 @@ h6 {
   margin-top: -30px;
   border-radius: 5px;
   width: max-content;
-  max-width: 350px;
+  max-width: 300px;
   padding: 6px;
   background-color: #F0F2F5;
 }
@@ -2021,6 +2126,48 @@ margin-left: 50px;
   cursor: pointer;
   border: none;
   transition: all .3s ease;
+}
+
+.profile .card-body .input-profile .ganti-password {
+  height: 40px;
+  width: 150px;
+  text-align: center;
+  background-color: #dbdbdb;
+  border-radius: 15px;
+}
+
+.profile .card-body .input-profile .ganti-password .ganti {
+  line-height: 40px;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.profile .card-body .input-profile .ganti-password:hover {
+  background-color: #c7c7c7;
+  cursor: pointer;
+}
+
+.profile .card-body .input-profile .batal-ganti {
+  height: 40px;
+  width: 150px;
+  text-align: center;
+  background-color: #dbdbdb;
+  border-radius: 15px;
+  position: absolute;
+  margin-left: 160px;
+  margin-top: -40px;
+  display: none;
+}
+
+.profile .card-body .input-profile .batal-ganti .ganti {
+  line-height: 40px;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.profile .card-body .input-profile .batal-ganti:hover {
+  background-color: #c7c7c7;
+  cursor: pointer;
 }
 
 

@@ -7,10 +7,10 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6 text-center">
-                <img src="assets/img/gallery/gallery-2.jpg" alt="">
-                <h2>Ini Nama Lengkap</h2>
-                <p class="username">ini username</p>
-                <p class="deskripsi-profile">ini deskripsi profile</p>
+                <img src="assets/img/profile/<?= userProfileLogin()->photo_profile; ?>" alt="">
+                <h2><?= userLogin()->nama_lengkap; ?></h2>
+                <p class="username"><?= userLogin()->username; ?></p>
+                <p class="deskripsi-profile"><?= userProfileLogin()->describe_profile; ?></p>
                 <a href="/edit-profile" class="btn-get-started">Edit Profile</a>
             </div>
         </div>
@@ -25,8 +25,37 @@
     <!-- ======= Gallery Section ======= -->
     <section id="gallery" class="gallery-myprofile">
         <div class="container-fluid">
+            <?php if (session()->getFlashdata('pesan_delete')) : ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong><?= session()->getFlashdata('pesan_delete'); ?></strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php endif; ?>
+            <?php if (session()->getFlashdata('pesan_edit')) : ?>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong><?= session()->getFlashdata('pesan_edit'); ?></strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php endif; ?>
 
             <div class="induk row gy-4">
+                <?php
+                foreach ($foto as $f) : ?>
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="gallery-item h-100">
+                            <img src="assets/img/gallery/<?= $f->photo; ?>" class="img-fluid" alt="">
+                            <div class="gallery-links d-flex align-items-center justify-content-center">
+                                <a href="/detail/<?= $f->id_photo; ?>" title="Detail" class="preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                                <form action="/delete/<?= $f->id_photo; ?>" method="post">
+                                    <?= csrf_field(); ?>
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="preview-link" title="Hapus" onclick="return confirm('Apakah Anda yakin hapus?');"><i class="bi bi-trash3-fill h3"></i></button>
+                                </form>
+                                <a href="/edit/<?= $f->id_photo; ?>" title="Edit" class="details-link"><i class="bi bi-pencil-fill"></i></a>
+                            </div>
+                        </div>
+                    </div><!-- End Gallery Item -->
+                <?php endforeach; ?>
                 <div class="col-xl-3 col-lg-4 col-md-6">
                     <div class="gallery-item h-100">
                         <img src="assets/img/gallery/2.jpg" class="img-fluid" alt="">

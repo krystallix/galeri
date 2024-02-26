@@ -11,7 +11,7 @@
                 <div class="col-md-6">
                     <div class="tambah card">
                         <div class="card-header">
-                            Form Tambah Foto
+                            Form Post Foto
                             <div class="float-end">
                                 <a href="/" class="btn btn-warning btn-sm"><i class="bi bi-arrow-left-short"></i> Back</a>
                             </div>
@@ -52,7 +52,7 @@
                                             </div>
                                             <div class="deskripsi form-group">
                                                 <label>Deskripsi</label>
-                                                <textarea class="form-control <?= (session('validation') && session('validation')->hasError('deskripsi')) ? 'is-invalid' : ''; ?>" id="deskripsi" name="deskripsi" cols="30" rows="10" placeholder="Masukkan deskripsi foto" value="<?= old('deskripsi'); ?>"></textarea>
+                                                <textarea class="form-control <?= (session('validation') && session('validation')->hasError('deskripsi')) ? 'is-invalid' : ''; ?>" id="deskripsi" name="deskripsi" cols="30" rows="10" placeholder="Masukkan deskripsi foto"><?= htmlspecialchars(old('deskripsi')); ?></textarea>
                                                 <?php if (session('validation') && session('validation')->hasError('deskripsi')) : ?>
                                                     <div id="deskripsi" class="invalid-feedback">
                                                         <?= session('validation')->getError('deskripsi'); ?>

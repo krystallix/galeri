@@ -78,7 +78,7 @@
                 <li class="nav-item">
                     <div class="my-profile">
                         <div>
-                            <img src="<?php echo base_url('assets') ?>/img/gallery/gallery-5.jpg" alt="">
+                            <img src="<?php echo base_url('assets') ?>/img/profile/<?= userProfileLogin()->photo_profile; ?>" alt="">
                             <ul class="profile-option">
                                 <li><a href="/admin/profile"><i class="bi bi-person-circle"></i> Profile</a></li>
                                 <li onclick="return confirm('Apakah yakin logout?');"><a href="#"><i class="bi bi-arrow-left-circle-fill"></i> Logout</a></li>

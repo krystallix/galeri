@@ -15,6 +15,22 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
+                        <li style="margin-right: 20px;">
+                            <div>
+                                <form action="" method="post" autocomplete="off">
+                                    <div class="input-group input-group-sm col-12" style="width: 300px;">
+                                        <?php $request = \Config\Services::request(); ?>
+                                        <input type="text" name="keyword" value="<?= $request->getVar('keyword') ?>" class="form-control float-right" placeholder="Search">
+
+                                        <div class="input-group-append">
+                                            <button type="submit" class="btn btn-default">
+                                                <i class="fas fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item active">Profile User</li>
                     </ol>

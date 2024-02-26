@@ -11,8 +11,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="<?php echo base_url('assets') ?>/img/favicon.png" rel="icon">
+    <link href="<?php echo base_url('assets') ?>/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,14 +20,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets') ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets') ?>/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets') ?>/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets') ?>/vendor/snackbar/snackbar.min.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets') ?>/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets') ?>/vendor/aos/aos.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets') ?>/css/main.css" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: PhotoFolio
@@ -54,7 +55,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <!-- <li><a href="/" class="active">Home</a></li> -->
-                    <li><a href="/tambah">Post</a></li>
+                    <li><a href="/post">Post</a></li>
                     <!-- <li><a href="about.html">About</a></li>
                     <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
@@ -123,7 +124,7 @@
                     $profileUser = userProfileLogin()->photo_profile;
                     ?>
 
-                    <img src="assets/img/profile/<?= $profileUser; ?>" alt="">
+                    <img src="<?php echo base_url('assets') ?>/img/profile/<?= $profileUser; ?>" alt="">
                     <ul class="profile-option">
                         <li><a href="/my-profile"><i class="bi bi-person-circle"></i> Profile</a></li>
                         <li onclick="return confirm('Apakah yakin logout?');"><a href="/logout"><i class="bi bi-arrow-left-circle-fill"></i> Logout</a></li>

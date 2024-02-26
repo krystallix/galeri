@@ -97,7 +97,7 @@
                 <form action="/registrasiProses" method="post" enctype="multipart/form-data">
                     <?= csrf_field(); ?>
                     <div class="input-group mb-3 profile">
-                        <img src="<?php echo base_url('assets') ?>/img/default.jpg" class="img-preview card-img" alt="gambar" height="100%">
+                        <img src="<?php echo base_url('assets') ?>/img/defaultProfile.jpg" class="img-preview card-img" alt="gambar" height="100%">
                         <label for="foto">
                             <div class="ganti-foto">
                                 <span aria-hidden="true" class="ganti">Pilih Foto Profile</span>

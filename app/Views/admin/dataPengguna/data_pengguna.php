@@ -84,39 +84,39 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center" width="5%">NO</th>
-                                        <th class="text-center" width="10%">USER ID</th>
-                                        <th class="text-center" width="14%">USERNAME</th>
-                                        <th class="text-center" width="20%">NAMA LENGKAP</th>
-                                        <th class="text-center" width="18%">EMAIL</th>
-                                        <th class="text-center" width="15%">PASSWORD</th>
-                                        <th class="text-center" width="18%" colspan="3">AKSI</th>
+                                        <th class="text-center" width="13%">USER ID</th>
+                                        <th class="text-center" width="17%">USERNAME</th>
+                                        <th class="text-center" width="23%">NAMA LENGKAP</th>
+                                        <th class="text-center" width="21%">EMAIL</th>
+                                        <th class="text-center" width="121%" colspan="3">AKSI</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
-
-                                    <tr>
-                                        <td class="text-center">1</td>
-                                        <td class="text-left">0001</td>
-                                        <td class="text-center">nanda</td>
-                                        <td class="text-left">Dian Nanda</td>
-                                        <td class="text-left">dian@gmail.com</td>
-                                        <td class="text-center">diannanda1</td>
-                                        <td class="text-center">
-                                            <a href="/admin/detailPengguna" class="btn btn-info btn-sm" title="Detail"><i class="bi bi-zoom-in h6"></i></a>
-                                        </td>
-                                        <td class="text-center">
-                                            <a href="/admin/editPengguna" class="btn btn-warning btn-sm" title="Edit"><i class="bi bi-pencil-square h6"></i></a>
-                                        </td>
-                                        <td class="text-center">
-                                            <form action="" method="post">
-                                                <?= csrf_field(); ?>
-                                                <input type="hidden" name="_method" value="DELETE">
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Hapus" onclick="return confirm('Apakah yakin hapus?');"><i class="bi bi-trash3 h6"></i></button>
-                                            </form>
-                                        </td>
-                                    </tr>
-
+                                    <?php
+                                    $no = 1;
+                                    foreach ($pengguna as $p) { ?>
+                                        <tr>
+                                            <td class="text-center"><?= $no++; ?></td>
+                                            <td class="text-left"><?= $p->user_id; ?></td>
+                                            <td class="text-center"><?= $p->username; ?></td>
+                                            <td class="text-left"><?= $p->nama_lengkap; ?></td>
+                                            <td class="text-left"><?= $p->email; ?></td>
+                                            <td class="text-center">
+                                                <a href="/admin/detailPengguna/<?= $p->user_id; ?>" class="btn btn-info btn-sm" title="Detail"><i class="bi bi-zoom-in h6"></i></a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="/admin/editPengguna/<?= $p->user_id; ?>" class="btn btn-warning btn-sm" title="Edit"><i class="bi bi-pencil-square h6"></i></a>
+                                            </td>
+                                            <td class="text-center">
+                                                <form action="/admin/deletePengguna/<?= $p->user_id; ?>" method="post">
+                                                    <?= csrf_field(); ?>
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <button type="submit" class="btn btn-danger btn-sm" title="Hapus" onclick="return confirm('Apakah yakin hapus?');"><i class="bi bi-trash3 h6"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
 

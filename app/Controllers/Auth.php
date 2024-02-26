@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\LoginModel;
+use App\Models\LoginUserModel;
 
 class Auth extends BaseController
 {
@@ -60,6 +61,15 @@ class Auth extends BaseController
             if (password_verify($post['password'], $user->password)) {
                 $params = ['user_id' => $user->user_id];
                 session()->set($params);
+
+                $login = new LoginUserModel();
+                $data_insert = [
+                    'user_id'   => userLogin()->user_id
+                ];
+
+                $login->insert($data_insert);
+
+
                 return redirect()->to('/');
             } else {
                 return redirect()->back()->withInput()->with('error', 'Password tidak sesuai!');
@@ -81,10 +91,174 @@ class Auth extends BaseController
 
     public function registrasiProses()
     {
+        // List email terdaftar dari database
+        $emailTerdaftar = $this->loginModel->getEmail();
+
+        // email yang akan di cek, ambil dari inputan user
+        $NewEmailRegistration = $this->request->getVar('email');
+
+
+        // $emailTerdaftar, tipe datane opo? 
+        // $NewEmailRegistration tipe datane opo? 
+
+        // rule'e simpel, kedua tipe data kui ujunge harus string ben iso di compare.
+
+        // gini, tampilno $NewEmailRegistration sebagai string. 
+        // lalu, tampilno emailterdaftar index ke-1. 
+        // nek kui iso, tinggal di convert neng string. 
+
+        // lanjut, emailterdaftar index ke-1
+
+
+
+        // gini carane : 
+        // $jenengVariable[index] -> key
+        // dd($emailTerdaftar[1]->email);
+
+        // aku pengen nampilke index ke-1, pie carane? ntah -_- sek
+        // dd($emailTerdaftar->videoid);
+
+
+
+        // cek email apakah sudah terdaftar?
+        $err = "";
+        for ($i = 0; $i < count($emailTerdaftar); $i++) {
+            if ($emailTerdaftar[$i]->email == $NewEmailRegistration) {
+
+                // dd($emailTerdaftar[$i]->email);
+                // tampilke email ketika podo. 
+                // woke, done, paham durung? 
+                $rule_email = 'required|valid_email|is_unique[user.email]';
+                // $err = "Email Already Registered, Please Login";
+                // break'e ojo diilangi. nek tok ilangi ngebut ntar. 
+                //nek break berarti hah kepie.
+                // ketika email terdaftar podo karo email sek diinput, otomatis rule sesuai diatas. 
+
+                // nek break'e diilangi, ntar ono kemungkinan ngebug ketika email selanjute enggak podo. 
+                break;
+            } else {
+                $rule_email = 'required|valid_email';
+            }
+        }
+
+
+        // List username terdaftar dari database
+        $userTerdaftar = $this->loginModel->getUsername();
+
+        // username yang akan di cek, ambil dari inputan user
+        $NewUsernameRegistration = $this->request->getVar('username');
+
+        for ($i = 0; $i < count($userTerdaftar); $i++) {
+            if ($userTerdaftar[$i]->username == $NewUsernameRegistration) {
+
+                // dd($emailTerdaftar[$i]->email);
+                // tampilke email ketika podo. 
+                // woke, done, paham durung? 
+                $rule_username = 'required|max_length[20]|is_unique[user.username]';
+                // $err = "Email Already Registered, Please Login";
+                // break'e ojo diilangi. nek tok ilangi ngebut ntar. 
+                //nek break berarti hah kepie.
+                // ketika email terdaftar podo karo email sek diinput, otomatis rule sesuai diatas. 
+
+                // nek break'e diilangi, ntar ono kemungkinan ngebug ketika email selanjute enggak podo. 
+                break;
+            } else {
+                $rule_username = 'required|max_length[20]';
+            }
+        }
+
+
+        // $AngkaDicari = 1;
+
+        // for ($i = 0; $i < 3; $i++) {
+        //     if ($i == $AngkaDicari) {
+        //         echo "Hasil Akhir : ketemu";
+        //         break;
+        //     } else {
+        //         echo "Hasil Akhir : tidak ketemu";
+        //     }
+        // }
+
+        // hasil penjalanan program ::
+        // angka dicari      | i 
+        // 1 | 0 => Hasil Akhir : tidak ketemu
+        // 1 | 1 => Hasil Akhir : ketemu
+
+        // BREAK HERE!. 
+        // Sehingga hasil akhir : ketemu. 
+
+        // 1 | 2 => Hasil Akhir : tidak ketemu
+
+        // ongko 1 kan haruse ketemu. 
+        // Tapi karena enggak tok stop nganggo break, tetep lanjut neng perulangan selanjute. 
+        // sehingga hasile tidak ketemu (BUG!).
+        // ketika ketemu, harus di break. 
+
+        // pahami sek kui. 
+        // Ntar nek ditakoni bingung dirimu. 
+        // Nggak kudu paham saiki, tapi penting banget diphami nek dirimu serius pengen dadi programmer. 
+
+        // ikuu, tes sek programe. XD
+        // dikoemn sek berarti. 
+        // heem, karooo
+        // diilangi fitur tes'e. 
+        // maukan lehku ngetes dengan cara nampilke email ketika email'e wis teregistrasi. 
+        // saiki diilangi. 
+
+
+        // if ($err != "") {
+        //     // return error ke fe
+        //     // tampilken error. 
+        //     // nek neng native, tinggal tak echo 
+        //     echo "ADA error : " + $err;
+        // } else {
+        //     echo "tidak ada error";
+        //     // lanjuut proses
+        // }
+        // done cek email apakah sudah terdaftar?
+
+        // secara konsep kek gitu
+        //terus aku kepie 
+
+        // aku paham sek arep tok garap, cuman aku nggak paham framework. 
+        // tak nei kisi2ne, dirimu sek garap. Aku nggak familiar sama sekali. Cuman iso nebak seko alur. 
+
+        // oke, gini. 
+        // fungsi neng nduwur cek'o. 
+        // jalanke ben iso tampil "ADA ERROR", atau "TIDAK ADA ERROR";
+        //tak jajale sek 
+        // LIFE WAE GAPOPO, sory capslock. 
+        // life wae gapopo, sekalian aku sinau. 
+        // gasskan
+
+        // dd($emailTerdaftar);
+
+
+        // ora nganggo dd? wiss, sangar, wis kenal istilah dd saiki :D
+        // aku murni nganggo native, dd pun ono neng native.  Kui sek arep cobo tak lakokke. Tulung DD ke .
+        // echo $emailTerdaftar;
+
+        // if ($emailTerdaftar == $this->request->getVar('email')) {
+        //     $rule_email = 'required|valid_email|is_unique[user.email]';
+        // } else {
+        //     $rule_email = 'required|valid_email';
+        // }
+
+
+        // wokeh, arrayne sek endi sek tok ss mau? 
+        // wokeh, terus, arep dipiekke? 
+        //dicek, email sek neng database karo sek diinput user, nek podo tampilke email sudah terdaftar, nek bedo rpp
+        // iyo, rpp :D
+
+        // oke, email sek arep di daftar sek endi? 
+        //emaile bebas 
+        // woke, terus, array sek isine email sek iki? 
+        //heem
+
         //validasi input
         if (!$this->validate([
             'username' => [
-                'rules'     => 'required|max_length[20]|is_unique[user.username]',
+                'rules'     => $rule_username,
                 'errors'    => [
                     'required'    => 'Username harus diisi!',
                     'max_length'  => 'Username maksimal 20 karakter!',
@@ -109,7 +283,7 @@ class Auth extends BaseController
             ],
 
             'email' => [
-                'rules'     => 'required|valid_email|is_unique[user.email]',
+                'rules'     => $rule_email,
                 'errors'    => [
                     'required'      => 'Email harus diisi!',
                     'valid_email'   => 'Email tidak valid!',

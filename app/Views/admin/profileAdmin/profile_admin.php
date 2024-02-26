@@ -15,6 +15,22 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
+                        <li style="margin-right: 20px;">
+                            <div>
+                                <form action="" method="post" autocomplete="off">
+                                    <div class="input-group input-group-sm col-12" style="width: 300px;">
+                                        <?php $request = \Config\Services::request(); ?>
+                                        <input type="text" name="keyword" value="<?= $request->getVar('keyword') ?>" class="form-control float-right" placeholder="Search">
+
+                                        <div class="input-group-append">
+                                            <button type="submit" class="btn btn-default">
+                                                <i class="fas fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item active">My Profile</li>
                     </ol>
@@ -33,21 +49,21 @@
                 <div class="profile-admin card card-widget widget-user shadow">
 
                     <div class="widget-user-header">
-                        <div class="widget-user-username">Alexander Pierce</div>
+                        <div class="widget-user-username"><?= userLogin()->nama_lengkap; ?></div>
                         <div class="widget-user-desc">Admin</div>
                     </div>
                     <div class="widget-user-image">
-                        <img class="img-circle elevation-2" src="<?php echo base_url('assets') ?>/dist/img/user1-128x128.jpg" alt="User Avatar">
+                        <img class="img-circle elevation-2" src="<?php echo base_url('assets') ?>/img/profile/<?= userProfileLogin()->photo_profile; ?>" alt="User Avatar">
                     </div>
                     <div class="card-footer">
                         <div class="row justify-content-center">
                             <div class="username-admin">
-                                username
+                                <?= userLogin()->username; ?>
                             </div>
                         </div>
                         <div class="row justify-content-center">
                             <div class="deskripsi-admin">
-                                ini deskripsi profile
+                                <?= userProfileLogin()->describe_profile;; ?>
                             </div>
                         </div>
                         <div class="row justify-content-center">
@@ -96,22 +112,42 @@
                 <section id="gallery" class="gallery">
                     <div class="container-fluid">
 
+                        <?php if (session()->getFlashdata('pesan_delete')) : ?>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <?= session()->getFlashdata('pesan_delete'); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (session()->getFlashdata('pesan_edit')) : ?>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <?= session()->getFlashdata('pesan_edit'); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php endif; ?>
+
                         <div class="induk row gy-4">
-                            <div class="gambar col-xl-3 col-lg-4 col-md-6">
-                                <div class="gallery-item h-100">
-                                    <img src="<?php echo base_url('assets') ?>/img/gallery/2.jpg" class="img-fluid" alt="">
-                                    <div class="gallery-links d-flex align-items-center justify-content-center">
-                                        <a href="/admin/detail" title="Detail" class="preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
-                                        <form action="" method="post">
-                                            <?= csrf_field(); ?>
-                                            <input type="hidden" name="_method" value="DELETE">
-                                            <button type="submit" class="btn-hapus-foto preview-link" title="Hapus" onclick="return confirm('Apakah Anda yakin hapus?');"><i class="bi bi-trash3-fill h3"></i></button>
-                                        </form>
-                                        <a href="/admin/edit" title="Edit" class="details-link"><i class="bi bi-pencil-fill"></i></a>
-                                        <!-- <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
+                            <?php
+                            foreach ($foto as $f) : ?>
+                                <div class="gambar col-xl-3 col-lg-4 col-md-6">
+                                    <div class="gallery-item h-100">
+                                        <img src="<?php echo base_url('assets') ?>/img/gallery/<?= $f->photo; ?>" class="img-fluid" alt="">
+                                        <div class="gallery-links d-flex align-items-center justify-content-center">
+                                            <a href="/admin/detail/<?= $f->id_photo; ?>" title="Detail" class="preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                                            <form action="/admin/delete/<?= $f->id_photo; ?>" method="post">
+                                                <?= csrf_field(); ?>
+                                                <input type="hidden" name="_method" value="DELETE">
+                                                <button type="submit" class="btn-hapus-foto preview-link" title="Hapus" onclick="return confirm('Apakah Anda yakin hapus?');"><i class="bi bi-trash3-fill h3"></i></button>
+                                            </form>
+                                            <a href="/admin/edit/<?= $f->id_photo; ?>" title="Edit" class="details-link"><i class="bi bi-pencil-fill"></i></a>
+                                            <!-- <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
+                                        </div>
                                     </div>
-                                </div>
-                            </div><!-- End Gallery Item -->
+                                </div><!-- End Gallery Item -->
+                            <?php endforeach; ?>
                             <div class="gambar col-xl-3 col-lg-4 col-md-6">
                                 <div class="gallery-item">
                                     <img src="<?php echo base_url('assets') ?>/img/gallery/gallery-2.jpg" class="img-fluid" alt="">
